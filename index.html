@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+<!--[if lt IE 9]>
+
+<![endif]-->
+
+<!-- END OF DON'T TOUCH -->
+
+<!-- Website Title -->
+<title>Test</title>
+<!-- END OF Website Title -->
+
+<!--  Website description - Change the 'content' section to whatever you want -->
+<meta name="description" content="Replace this text with a summary of your website. i.e. John Smith - Web Developer and Photographer - Welcome to my portfolio website! Here you will find all of my latest work. Enjoy!">
+<!-- END OF Website description -->
+
+<!-- DON'T TOUCH THIS SECTION -->
+
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/jquery.js"></script>
+<script>
+	$( document ).ready(function() {
+	  
+
+	  
+	  function calc() {
+	  	var bodywidth = $(window).width();
+	  	var containerwidth = $(".wrapper").width();
+	  	var boxwidth = $(".span_2").width();
+	  	var boxwidth2 = $(".span_3").width();
+	  	var boxwidth3 = $(".span_1").width();
+	  
+	  	$(".bodywidth").html(bodywidth + 'px') ;
+	  	$(".containerwidth").html(containerwidth + 'px');
+	  	$(".span_2 span").html(boxwidth + 'px');
+	  	$(".span_3 span").html(boxwidth2 + 'px');
+	  	$(".span_1 span").html(boxwidth3 + 'px');
+	  }
+	  
+	  $(window).resize( function() {
+	  
+		  calc();
+	  	
+	  });
+	  
+	  $('.grids').click(function () {
+	  	$('.row,.containerwidth').toggle();
+	  });
+	  
+	  $('.adaptive').click(function () {
+	  	$('.wrapper').removeClass('responsive mixed').addClass('adaptive');
+	  	$(".label").html('Adaptive');
+	  	
+	  	calc();
+	  });
+
+		$('.responsive').click(function () {
+			$('.wrapper').removeClass('adaptive mixed').addClass('responsive');
+			$(".label").html('Responsive');
+			
+			calc();
+		});
+		
+		
+		$('.mixed').click(function () {
+			$('.wrapper').removeClass('responsive adaptive').addClass('mixed');
+			$(".label").html('Mixed');
+			
+			calc();
+		});
+			  
+	});
+
+</script>
+</head>
+<!-- END OF DON'T TOUCH -->
+
+<body>
+<nav>
+	<a class="adaptive" href="#">Adaptive</a>
+	<a class="responsive" href="#">Responsive</a>
+	<a class="mixed" href="#">Mixed</a>
+	<a class="grids" href="#">Grids</a>
+	
+</nav>
+
+
+<span class="bodywidth big"></span>
+
+<div class="wrapper adaptive">
+	<div class="label"></div>
+	
+	<span class="containerwidth big"></span> 
+	
+	<br /><br /><br /><br />
+	<div class="row">
+	    <div class="span_2 col">1 Third - <span></span></div>
+	    <div class="span_2 col">1 Third - <span></span></div>
+	    <div class="span_2 col">1 Third - <span></span></div>
+	</div> 
+	
+	<div class="row">
+	    <div class="span_3 col">1 Half - <span></span></div>
+	    <div class="span_3 col">1 Half - <span></span></div>
+	</div> 
+	
+	<div class="row">
+	    <div class="span_1 col">1 Sixth - <span></span></div>
+	    <div class="span_1 col">1 Sixth - <span></span></div>
+	    <div class="span_1 col">1 Sixth - <span></span></div>
+	    <div class="span_1 col">1 Sixth - <span></span></div>
+	    <div class="span_1 col">1 Sixth - <span></span></div>
+	    <div class="span_1 col">1 Sixth - <span></span></div>
+	</div>   
+</div>
+
+</body>
+</html>
